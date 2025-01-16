@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserList Component matches snapshot 1`] = `
+exports[`MethodList Snapshot matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="content-box list-box width100"
+    class="content-box list-box"
   >
     <div
       class="contentiks"
@@ -13,10 +13,10 @@ exports[`UserList Component matches snapshot 1`] = `
       >
         <div>
           <h6>
-            Ivanov Ivan Ivanovich
+            Method 1
           </h6>
           <p>
-            Должность: Engineer
+            Author 1 (University 1, 2023)
           </p>
         </div>
         <div
@@ -24,6 +24,7 @@ exports[`UserList Component matches snapshot 1`] = `
         >
           <button
             class="plus-button btn btn-light"
+            data-testid="toggle-button-0"
             type="button"
           >
             <svg
@@ -41,7 +42,27 @@ exports[`UserList Component matches snapshot 1`] = `
             </svg>
           </button>
           <button
-            class="btn btn-warning"
+            class="btn btn-link"
+            data-testid="download-button-0"
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 384 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"
+              />
+            </svg>
+          </button>
+          <button
+            class="mx-2 btn btn-primary"
+            data-testid="edit-button-0"
             type="button"
           >
             <svg
@@ -58,6 +79,25 @@ exports[`UserList Component matches snapshot 1`] = `
               />
             </svg>
           </button>
+          <button
+            class="btn btn-danger"
+            data-testid="delete-button-0"
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
       <div
@@ -65,13 +105,7 @@ exports[`UserList Component matches snapshot 1`] = `
         data-testid="details-0"
       >
         <p>
-          Email: ivan@example.com
-        </p>
-        <p>
-          Phone: 123456789
-        </p>
-        <p>
-          Role: USER
+          Description 1
         </p>
       </div>
     </div>
@@ -83,10 +117,10 @@ exports[`UserList Component matches snapshot 1`] = `
       >
         <div>
           <h6>
-            Petrov Petr Petrovich
+            Method 2
           </h6>
           <p>
-            Должность: Manager
+            Author 2 (University 2, 2022)
           </p>
         </div>
         <div
@@ -94,6 +128,7 @@ exports[`UserList Component matches snapshot 1`] = `
         >
           <button
             class="plus-button btn btn-light"
+            data-testid="toggle-button-1"
             type="button"
           >
             <svg
@@ -111,7 +146,27 @@ exports[`UserList Component matches snapshot 1`] = `
             </svg>
           </button>
           <button
-            class="btn btn-warning"
+            class="btn btn-link"
+            data-testid="download-button-1"
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 384 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"
+              />
+            </svg>
+          </button>
+          <button
+            class="mx-2 btn btn-primary"
+            data-testid="edit-button-1"
             type="button"
           >
             <svg
@@ -128,6 +183,25 @@ exports[`UserList Component matches snapshot 1`] = `
               />
             </svg>
           </button>
+          <button
+            class="btn btn-danger"
+            data-testid="delete-button-1"
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
       <div
@@ -135,13 +209,7 @@ exports[`UserList Component matches snapshot 1`] = `
         data-testid="details-1"
       >
         <p>
-          Email: petr@example.com
-        </p>
-        <p>
-          Phone: 987654321
-        </p>
-        <p>
-          Role: ADMIN
+          Description 2
         </p>
       </div>
     </div>

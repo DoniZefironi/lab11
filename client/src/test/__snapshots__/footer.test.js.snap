@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component matches snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="text-white text-center py-4"
+    style="background-color: rgb(43, 87, 154);"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-4"
+        >
+          <h5>
+            Полезные ссылки
+          </h5>
+          <ul
+            class="list-unstyled"
+          >
+            <li>
+              <a
+                class="text-white"
+                href="http://bru.by/"
+              >
+                <img
+                  alt="Report"
+                  class="img-fluid"
+                  src="unic.png"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-white"
+                href="http://bru.by/content/departments/softinformtechnology"
+              >
+                <img
+                  alt="Report"
+                  class="img-fluid"
+                  src="cafedra.png"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-white"
+                href="http://biblio.bru.by/"
+              >
+                <img
+                  alt="Report"
+                  class="img-fluid"
+                  src="biblio.png"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="col-md-4"
+        >
+          <h5>
+            Контакты
+          </h5>
+          <div
+            class="blockimg"
+          >
+            <a
+              href="https://maps.google.com?q=г.+Могилев,+ул.+Ленинская+89,+ауд.+322,+корпус+№2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <img
+                alt="Report"
+                class="img-fluid"
+                src="geo.png"
+              />
+            </a>
+            <a
+              href="https://maps.google.com?q=г.+Могилев,+ул.+Ленинская+89,+ауд.+322,+корпус+№2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              г. Могилев, ул. Ленинская 89, ауд. 322, корпус №2
+            </a>
+          </div>
+          <div
+            class="blockimg"
+          >
+            <a
+              href="tel:+37522629447"
+            >
+              <img
+                alt="Report"
+                class="img-fluid"
+                src="tel.png"
+              />
+            </a>
+            <a
+              href="tel:+37522629447"
+            >
+              +375-22-629-447
+            </a>
+          </div>
+          <div
+            class="blockimg"
+          >
+            <a
+              href="mailto:poit@bru.by"
+            >
+              <img
+                alt="Report"
+                class="img-fluid"
+                src="sms.png"
+              />
+            </a>
+            <a
+              href="mailto:poit@bru.by"
+            >
+              poit@bru.by
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

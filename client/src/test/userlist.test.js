@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom'; // Корректный импорт библиотеки
 import UserList from '../components/userlist'; // Убедитесь, что путь правильный
 
 const users = [
@@ -68,52 +69,56 @@ describe('UserList Component', () => {
     expect(handleToggle).toHaveBeenCalledWith(0);
   });
 
-  it('shows and hides additional information on toggle', () => {
-    const { getByText, queryByText, rerender } = render(
-        <UserList
-            users={users}
-            currentUser={currentUser}
-            handleToggle={handleToggle}
-            openIndex={-1} // Начальное скрытое состояние
-            setCurrentUserEdit={setCurrentUserEdit}
-            setShowEditModal={setShowEditModal}
-        />
+  it('shows and hides additional information on toggle', async () => {
+    const { queryByTestId, rerender } = render(
+      <UserList
+        users={users}
+        currentUser={currentUser}
+        handleToggle={handleToggle}
+        openIndex={-1} // Начальное скрытое состояние
+        setCurrentUserEdit={setCurrentUserEdit}
+        setShowEditModal={setShowEditModal}
+      />
     );
 
     // Проверка начального состояния
-    expect(queryByText('Email: ivan@example.com')).not.toBeVisible();
-    expect(queryByText('Email: petr@example.com')).not.toBeInTheDocument();
+    let element = queryByTestId('details-0');
+    expect(element).toHaveClass('collapse');
+    expect(element).not.toHaveClass('show');
 
     // Обновляем рендеринг компонента с openIndex = 0
     rerender(
-        <UserList
-            users={users}
-            currentUser={currentUser}
-            handleToggle={handleToggle}
-            openIndex={0} // Открываем первый элемент
-            setCurrentUserEdit={setCurrentUserEdit}
-            setShowEditModal={setShowEditModal}
-        />
+      <UserList
+        users={users}
+        currentUser={currentUser}
+        handleToggle={handleToggle}
+        openIndex={0} // Открываем первый элемент
+        setCurrentUserEdit={setCurrentUserEdit}
+        setShowEditModal={setShowEditModal}
+      />
     );
 
-    // Проверка состояния после обновления
-    expect(getByText('Email: ivan@example.com')).toBeInTheDocument();
-    expect(queryByText('Email: petr@example.com')).not.toBeInTheDocument();
+    // Ожидаем завершения анимации
+    await waitFor(() => {
+      expect(element).toHaveClass('collapse show');
+    });
 
     // Скрываем информацию снова
     rerender(
-        <UserList
-            users={users}
-            currentUser={currentUser}
-            handleToggle={handleToggle}
-            openIndex={-1} // Скрываем информацию
-            setCurrentUserEdit={setCurrentUserEdit}
-            setShowEditModal={setShowEditModal}
-        />
+      <UserList
+        users={users}
+        currentUser={currentUser}
+        handleToggle={handleToggle}
+        openIndex={-1} // Скрываем информацию
+        setCurrentUserEdit={setCurrentUserEdit}
+        setShowEditModal={setShowEditModal}
+      />
     );
 
-    // Проверка состояния после скрытия
-    expect(queryByText('Email: ivan@example.com')).not.toBeInTheDocument();
-    expect(queryByText('Email: petr@example.com')).not.toBeInTheDocument();
-});
+    // Ожидаем завершения анимации
+    await waitFor(() => {
+      expect(element).toHaveClass('collapse');
+      expect(element).not.toHaveClass('show');
+    });
+  });
 });

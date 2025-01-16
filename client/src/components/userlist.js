@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Collapse } from 'react-bootstrap';
 import { FaPlus, FaMinus, FaEdit } from 'react-icons/fa';
 
@@ -31,7 +31,7 @@ const UserList = ({ users, currentUser, handleToggle, openIndex, setCurrentUserE
               </div>
             </div>
             <Collapse in={openIndex === index}>
-              <div className="additional-info">
+              <div className="additional-info" data-testid={`details-${index}`}>
                 <p>Email: {user.email}</p>
                 <p>Phone: {user.phone_number}</p>
                 <p>Role: {user.roles}</p>

@@ -1,13 +1,15 @@
 module.exports = {
     transform: {
-        '^.+\\.jsx?$': 'babel-jest', // Обработка файлов .js и .jsx с помощью babel-jest
+      '^.+\\.jsx?$': 'babel-jest',
     },
     moduleNameMapper: {
-        '\\.(css|less|scss)$': 'identity-obj-proxy', // Мокаем стили
-        '^axios$': 'axios/dist/node/axios.cjs' // Для правильной работы axios
+      '\\.(css|less|scss)$': 'identity-obj-proxy',
+      '^axios$': 'axios/dist/node/axios.cjs',
+      '^react-router-dom$': require.resolve('react-router-dom'),
     },
-    testEnvironment: 'jsdom', // Используем jsdom для тестирования React
+    testEnvironment: 'jsdom',
     transformIgnorePatterns: [
-        '/node_modules/(?!axios)' // Позволяет Jest обрабатывать axios
+      '/node_modules/(?!axios)',
     ],
-};
+  };
+  

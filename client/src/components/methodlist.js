@@ -13,40 +13,26 @@ const MethodList = ({ methods, handleToggle, openIndex, handleEdit, handleDelete
               <p>{method.author} ({method.university}, {method.year_create})</p>
             </div>
             <div className='iconochke'>
-            <div>
-              <Button variant="link" onClick={() => handleDownload(method.url)}>
+              <Button data-testid={`toggle-button-${index}`} variant="light" className="plus-button" onClick={() => handleToggle(index)}>
+                {openIndex === index ? <FaMinus /> : <FaPlus />}
+              </Button>
+              <Button data-testid={`download-button-${index}`} variant="link" onClick={() => handleDownload(method.url)}>
                 <FaFileDownload />
               </Button>
+              {currentUser.user.roles.includes("ADMIN") && (
+                <>
+                  <Button data-testid={`edit-button-${index}`} variant="primary" className="mx-2" onClick={() => handleEdit(method)}>
+                    <FaEdit />
+                  </Button>
+                  <Button data-testid={`delete-button-${index}`} variant="danger" onClick={() => handleDelete(method.id)}>
+                    <FaTrash />
+                  </Button>
+                </>
+              )}
             </div>
-            <Button variant="light" className="plus-button" onClick={() => handleToggle(index)}>
-              {openIndex === index ? <FaMinus /> : <FaPlus />}
-            </Button>
-            {currentUser.user.roles.includes("ADMIN") && (
-              <>
-                <Button variant="primary" className="mx-2" onClick={() => handleCreateUserMethodological(method.id)}>
-                  <FaUserPlus />
-                </Button>
-                <Button variant="info" className="mx-2" onClick={() => handleViewUserMethodological(method.id)}>
-                  <FaUsers />
-                </Button>
-                <Button variant="warning" className="mx-2" onClick={() => handleEdit(method)}>
-                  <FaEdit />
-                </Button>
-                <Button variant="danger" onClick={() => handleDelete(method.id)}>
-                  <FaTrash />
-                </Button>
-                <Button variant="success" className="mx-2" onClick={() => handleCreateSpecialityMethodological(method.id)}>
-                  <FaClipboardList />
-                </Button>
-                <Button variant="primary" className="mx-2" onClick={() => handleViewSpecialityMethodological(method.id)}>
-                  <FaClipboard />
-                </Button>
-              </>
-            )}
           </div>
-            </div>
           <Collapse in={openIndex === index}>
-            <div className="additional-info">
+            <div className="additional-info" data-testid={`details-${index}`}>
               <p>{method.description}</p>
             </div>
           </Collapse>
